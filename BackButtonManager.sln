@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackButtonManager", "src\BackButtonManager\BackButtonManager.csproj", "{9ED91015-6EBD-46C3-953C-274BCB0F52A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackButtonManager.Abstractions", "src\BackButtonManager.Abstractions\BackButtonManager.Abstractions.csproj", "{E3EFA217-673B-4DC9-95FF-F8DBD1A9A595}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackButtonManager.Tests", "src\BackButtonManager.Tests\BackButtonManager.Tests.csproj", "{86F78583-B479-4ABC-9C18-538E66F8A1AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackButtonManager.Uno", "src\BackButtonManager.Uno\BackButtonManager.Uno.csproj", "{A2C59DE1-3053-4E5F-B49C-0DC156F207D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|NuGet = Debug|NuGet
+		Release|Any CPU = Release|Any CPU
+		Release|NuGet = Release|NuGet
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9ED91015-6EBD-46C3-953C-274BCB0F52A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ED91015-6EBD-46C3-953C-274BCB0F52A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ED91015-6EBD-46C3-953C-274BCB0F52A9}.Debug|NuGet.ActiveCfg = Debug|Any CPU
+		{9ED91015-6EBD-46C3-953C-274BCB0F52A9}.Debug|NuGet.Build.0 = Debug|Any CPU
+		{9ED91015-6EBD-46C3-953C-274BCB0F52A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ED91015-6EBD-46C3-953C-274BCB0F52A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ED91015-6EBD-46C3-953C-274BCB0F52A9}.Release|NuGet.ActiveCfg = Release|Any CPU
+		{9ED91015-6EBD-46C3-953C-274BCB0F52A9}.Release|NuGet.Build.0 = Release|Any CPU
+		{E3EFA217-673B-4DC9-95FF-F8DBD1A9A595}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3EFA217-673B-4DC9-95FF-F8DBD1A9A595}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3EFA217-673B-4DC9-95FF-F8DBD1A9A595}.Debug|NuGet.ActiveCfg = Debug|Any CPU
+		{E3EFA217-673B-4DC9-95FF-F8DBD1A9A595}.Debug|NuGet.Build.0 = Debug|Any CPU
+		{E3EFA217-673B-4DC9-95FF-F8DBD1A9A595}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3EFA217-673B-4DC9-95FF-F8DBD1A9A595}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3EFA217-673B-4DC9-95FF-F8DBD1A9A595}.Release|NuGet.ActiveCfg = Release|Any CPU
+		{E3EFA217-673B-4DC9-95FF-F8DBD1A9A595}.Release|NuGet.Build.0 = Release|Any CPU
+		{86F78583-B479-4ABC-9C18-538E66F8A1AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86F78583-B479-4ABC-9C18-538E66F8A1AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86F78583-B479-4ABC-9C18-538E66F8A1AC}.Debug|NuGet.ActiveCfg = Debug|Any CPU
+		{86F78583-B479-4ABC-9C18-538E66F8A1AC}.Debug|NuGet.Build.0 = Debug|Any CPU
+		{86F78583-B479-4ABC-9C18-538E66F8A1AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86F78583-B479-4ABC-9C18-538E66F8A1AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86F78583-B479-4ABC-9C18-538E66F8A1AC}.Release|NuGet.ActiveCfg = Release|Any CPU
+		{86F78583-B479-4ABC-9C18-538E66F8A1AC}.Release|NuGet.Build.0 = Release|Any CPU
+		{A2C59DE1-3053-4E5F-B49C-0DC156F207D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2C59DE1-3053-4E5F-B49C-0DC156F207D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2C59DE1-3053-4E5F-B49C-0DC156F207D8}.Debug|NuGet.ActiveCfg = Debug|Any CPU
+		{A2C59DE1-3053-4E5F-B49C-0DC156F207D8}.Debug|NuGet.Build.0 = Debug|Any CPU
+		{A2C59DE1-3053-4E5F-B49C-0DC156F207D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2C59DE1-3053-4E5F-B49C-0DC156F207D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2C59DE1-3053-4E5F-B49C-0DC156F207D8}.Release|NuGet.ActiveCfg = Release|Any CPU
+		{A2C59DE1-3053-4E5F-B49C-0DC156F207D8}.Release|NuGet.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BA7DD68-E008-4F53-8F51-83D42D3877B9}
+	EndGlobalSection
+EndGlobal
