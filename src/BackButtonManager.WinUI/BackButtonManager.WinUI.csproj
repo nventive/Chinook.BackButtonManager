@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17134.0</TargetPlatformMinVersion>
+		<GenerateLibraryLayout>true</GenerateLibraryLayout>
+		<RootNamespace>Chinook.BackButtonManager</RootNamespace>
+		<Authors>nventive</Authors>
+		<Company>nventive</Company>
+		<AssemblyName>Chinook.BackButtonManager.WinUI</AssemblyName>
+		<PackageId>Chinook.BackButtonManager.WinUI</PackageId>
+		<Description>Chinook.BackButtonManager for WinUI</Description>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<DefineConstants>HAS_WINUI</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.WinUI" Version="3.0.0-preview3.201113.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\BackButtonManager.Abstractions\BackButtonManager.Abstractions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\BackButtonManager.Uno\SystemNavigationBackButtonSource.cs" />
+	</ItemGroup>
+</Project>

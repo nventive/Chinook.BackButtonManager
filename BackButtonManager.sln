@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackButtonManager.Tests", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackButtonManager.Uno", "src\BackButtonManager.Uno\BackButtonManager.Uno.csproj", "{A2C59DE1-3053-4E5F-B49C-0DC156F207D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackButtonManager.WinUI", "src\BackButtonManager.WinUI\BackButtonManager.WinUI.csproj", "{0CFD1983-4C9F-4923-8F2F-A729D3AC6E2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,14 @@ Global
 		{A2C59DE1-3053-4E5F-B49C-0DC156F207D8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A2C59DE1-3053-4E5F-B49C-0DC156F207D8}.Release|NuGet.ActiveCfg = Release|Any CPU
 		{A2C59DE1-3053-4E5F-B49C-0DC156F207D8}.Release|NuGet.Build.0 = Release|Any CPU
+		{0CFD1983-4C9F-4923-8F2F-A729D3AC6E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CFD1983-4C9F-4923-8F2F-A729D3AC6E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CFD1983-4C9F-4923-8F2F-A729D3AC6E2E}.Debug|NuGet.ActiveCfg = Debug|Any CPU
+		{0CFD1983-4C9F-4923-8F2F-A729D3AC6E2E}.Debug|NuGet.Build.0 = Debug|Any CPU
+		{0CFD1983-4C9F-4923-8F2F-A729D3AC6E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CFD1983-4C9F-4923-8F2F-A729D3AC6E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CFD1983-4C9F-4923-8F2F-A729D3AC6E2E}.Release|NuGet.ActiveCfg = Release|Any CPU
+		{0CFD1983-4C9F-4923-8F2F-A729D3AC6E2E}.Release|NuGet.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
