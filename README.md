@@ -1,65 +1,144 @@
-﻿# Introduction 
-BackButtonManager allows you to customize how your app reacts to the back button being pressed.
+﻿# Chinook.BackButtonManager 
+The `Chinook.BackButtonManager` packages provide recipes to ease the handling of back buttons in .Net applications. It was designed for MVVM applications, but should work with other patterns too.
 
-# Getting Started
+## Cornerstones
 
-## Uno projects
+- **Highly Extensible**
+  - Everything is interface-based to easily allow more implementations.
+  - A single framework can't cover everything. Our architecture is designed in a way that allows you to extend this foundation to support more use-cases.
+- **Simple**
+  - The recipes from these packages are ultra-simple but are still complete enough to support edge cases.
+
+## Getting Started
+
+### Uno projects
 
 BackButtonManager is especially well-integrated with [Uno](https://platform.uno/). Here is how to use it in a project which includes the Uno platform:
 
-* Add to your project the `Chinook.BackButtonManager.Uno` nuget package and its dependencies
-* Create a single instance of a `BackButtonManager` which you will use throughout your project.
+1. Add a package reference to `Chinook.BackButtonManager.Uno`.
+1. Create a single instance of a `BackButtonManager` which you will use throughout your project.
+   ```csharp
+   var manager = new BackButtonManager();
+   ```
 
-```
-var manager = new BackButtonManager();
-```
+1. In your app's Startup, add the source that the manager uses to detect back button presses:
+   ```csharp
+   // This must be executed on the dispatcher
+   var source = new SystemNavigationBackButtonSource();
+   manager.AddSource(source);
+   ```
 
-* In your app's Startup, add the source which BackButtonManager uses to detect back button presses:
+1. Add handlers for each action you want to take when the back button is pressed:
+   ```csharp
+   manager.AddHandler(new BackButtonHandler(
+	   name: "TODO handler name",
+   	canHandle: () => CanYourMethodBeCalled(),
+   	handle: async ct => await YourMethod(ct)
+   ));
+   ```
 
-```
-// This must be executed on the dispatcher
-var source = new SystemNavigationBackButtonSource();
-backButtonManager.AddSource(source);
-```
-
-* Add handlers for each action you want to take when the back button is pressed:
-
-```
-manager.AddHandler(new BackButtonHandler(
-	name: "TODO handler name",
-	canHandle: () => CanYourMethodBeCalled(),
-	handle: async ct => await YourMethod(ct)
-));
-```
-
-## Other projects
+### Other projects
 
 If your project does not use Uno, you can certainly use BackButtonManager! Here's how:
 
-* Add to your project the `Chinook.BackButtonManager` nuget package and its dependencies
-* Create a single instance of a `BackButtonManager` which you will use throughout your project.
+1. Add a package reference to `Chinook.BackButtonManager`.
+1. Create a single instance of a `BackButtonManager` which you will use throughout your project.
 
-```
-var manager = new BackButtonManager();
-```
+   ```csharp
+   var manager = new BackButtonManager();
+   ```
 
-* You will need to create a source which implements the `IBackButtonSource` interface. In your app's Startup, add this source so that BackButtonManager can use it to detect back button presses. 
+1. You will need to create a source which implements the `IBackButtonSource` interface. In your app's Startup, add this source so that BackButtonManager can use it to detect back button presses. 
 
-```
+   ```csharp
+   var source = new MyBackButtonSource();
+   manager.AddSource(source);
+   ```
+
+1. Add handlers for each action you want to take when the back button is pressed:
+
+   ```csharp
+   manager.AddHandler(new BackButtonHandler(
+     name: "TODO handler name",
+     canHandle: () => CanYourMethodBeCalled(),
+     handle: async ct => await YourMethod(ct)
+   ));
+   ```
+
+## Features
+### Create back button sources
+Using `IBackButtonSource`, you can implement a back button source. You can see that as an abstraction of a button. You could create sources for things like the following.
+- The hardware back button on Android.
+- The escape key from your keyboard.
+- The back button from your mouse.
+
+Once you have a back button source, simply add it to a `IBackButtonManager` using `AddSource`.
+
+#### Create a source from `SystemNavigationManager`
+This can be useful for UWP or Uno.UI applications. The source is based on the `SystemNavigationManager.BackRequested` event.
+```csharp
 // This must be executed on the dispatcher
-var source = new MyBackButtonSource();
-backButtonManager.AddSource(source);
+var source = new SystemNavigationBackButtonSource();
 ```
 
-* Add handlers for each action you want to take when the back button is pressed:
+#### Create a custom back button source
+The interface `IBackButtonSource` is very simple. You can implement your own sources easily.
 
+### Create back button handlers
+Using `IBackButtonHandler`, you can create the objects that react to back requests. Handlers can be added to (or removed from) a `IBackButtonManager` at any point.
+
+#### Create global handlers
+That's one of the main use-case of this recipe. You likely want to create a default action to perform when a back is requested.
+
+Here is some code showing how to setup a `IBackButtonManager` with a default handler in a context using Microsoft.Extensions.DependencyInjection and [Chinook.Navigation](https://github.com/nventive/Chinook.Navigation).
+```csharp
+public static IServiceCollection AddDefaultBackHandler(this IServiceCollection services)
+{
+  return services
+    .AddSingleton<IBackButtonManager>(s =>
+    {
+      var manager = new BackButtonManager();
+
+      var sectionsNavigator = s.GetRequiredService<ISectionsNavigator>();
+      manager.AddHandler(new BackButtonHandler(
+        name: "DefaultSectionsNavigatorHandler",
+        canHandle: () => sectionsNavigator.CanNavigateBackOrCloseModal(),
+        handle: async ct => await sectionsNavigator.NavigateBackOrCloseModal(ct)));
+
+      return manager;
+    });
+}
 ```
-manager.AddHandler(new BackButtonHandler(
-  name: "TODO handler name",
-  canHandle: () => CanYourMethodBeCalled(),
-  handle: async ct => await YourMethod(ct)
-));
+
+#### Create temporary handlers
+This can be useful when your page has advances states or secondary views. Imagine having a drawer or side menu. When that secondary view is active, it is likely that you want your back button to dismiss that secondary view rather than navigating to the previous page.
+
+```csharp
+public MainPageViewModel(IBackButtonManager manager)
+{
+	var customHandler = new BackButtonHandler("CustomBackHandler",
+		// The handler will only be invoked when the side panel is open.
+		canHandle: () => IsSidePanelOpen,
+		
+		// Close the side panel when a back is requested.
+		handle: async ct => IsSidePanelOpen = false
+	);
+	var subscription = manager.RegisterHandler(customHandler);
+
+	// Automatically remove the handler when this page gets disposed.
+	this.AddDisposable(subscription);
+}
+
+public bool IsSidePanelOpen
+{
+	get => this.Get<bool>(initialValue: false);
+	set => this.Set(value);
+}
 ```
+> 💡 This sample shows a ViewModel written using [Chinook.DynamicMvvm](https://github.com/nventive/Chinook.DynamicMvvm).
+
+#### Specify an handler's priority
+It is possible to specify a priority when calling `IBackButtonManager.AddHandler`. The highest priority handlers will be evaluated first.
 
 ## Contributing
 
