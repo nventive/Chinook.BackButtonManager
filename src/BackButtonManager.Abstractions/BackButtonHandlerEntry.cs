@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Chinook.BackButtonManager
+﻿namespace Chinook.BackButtonManager
 {
 	/// <summary>
 	/// This is a wrapper around <see cref="IBackButtonHandler"/> to add a priority property.
@@ -18,8 +14,14 @@ namespace Chinook.BackButtonManager
 			Priority = priority;
 		}
 
+		/// <summary>
+		/// Gets the wrapped handler.
+		/// </summary>
 		public IBackButtonHandler Handler { get; }
 
+		/// <summary>
+		/// Gets the priority.
+		/// </summary>
 		public int Priority { get; }
 	}
 }

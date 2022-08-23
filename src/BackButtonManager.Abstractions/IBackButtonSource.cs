@@ -31,5 +31,10 @@ namespace Chinook.BackButtonManager
 		public bool Handled { get; set; }
 	}
 
+	/// <summary>
+	/// The event handler delegate for <see cref="IBackButtonSource.BackRequested"/>.
+	/// </summary>
+	/// <param name="sender">The back button source that raises the event.</param>
+	/// <param name="eventArgs">The event parameters.</param>
 	public delegate void BackRequestedEventHandler(IBackButtonSource sender, BackRequestedEventArgs eventArgs);
 }
