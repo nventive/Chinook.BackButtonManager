@@ -27,11 +27,14 @@ GitHub Issue: #
   - Public constructs (class, struct, delegate, enum, etc.) were removed or renamed.
   - Public members were removed or renamed.
   - Public method signatures were changed or renamed.
-- [ ] **Minor** (Public API was extended)
+- [ ] **Minor** (Public API was extended.)
   - Public constructs, members, or overloads were added.
 - [ ] **Patch** (Public API was unchanged.)
   - A bug in behavior was fixed.
   - Documentation was changed.
+- [ ] **None** (The library is unchanged.)
+  - Only code under the `build` folder was changed.
+  - Only code under the `.github` folder was changed.
 
 ## Checklist
 
