@@ -10,13 +10,25 @@
 		<Company>nventive</Company>
 		<AssemblyName>Chinook.BackButtonManager.Uno</AssemblyName>
 		<PackageId>Chinook.BackButtonManager.Uno</PackageId>
-		<Description>Chinook.BackButtonManager.Uno</Description>
+		<Description>Chinook.BackButtonManager is a collection of extensible libraries to ease development around back button handling.</Description>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>back;navigation;mvvm;xamarin;ios;android;uwp;chinook</PackageTags>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/nventive/Chinook.BackButtonManager</PackageProjectUrl>
+
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
 		<DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
