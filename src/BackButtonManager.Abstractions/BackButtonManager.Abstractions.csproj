@@ -6,13 +6,25 @@
 		<Company>nventive</Company>
 		<AssemblyName>Chinook.BackButtonManager.Abstractions</AssemblyName>
 		<PackageId>Chinook.BackButtonManager.Abstractions</PackageId>
-		<Description>Chinook.BackButtonManager.Abstractions</Description>
+		<Description>Chinook.BackButtonManager is a collection of extensible libraries to ease development around back button handling.</Description>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>back;navigation;mvvm;xamarin;ios;android;uwp;chinook</PackageTags>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/nventive/Chinook.BackButtonManager</PackageProjectUrl>
+
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.0" />
