@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackButtonManager.Tests", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackButtonManager.Uno", "src\BackButtonManager.Uno\BackButtonManager.Uno.csproj", "{A2C59DE1-3053-4E5F-B49C-0DC156F207D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackButtonManager.Uno.WinUI", "src\BackButtonManager.Uno.WinUI\BackButtonManager.Uno.WinUI.csproj", "{7FF55F70-FC2F-4280-B8A0-444FD1809A99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackButtonManager.Uno.WinUI", "src\BackButtonManager.Uno.WinUI\BackButtonManager.Uno.WinUI.csproj", "{7FF55F70-FC2F-4280-B8A0-444FD1809A99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

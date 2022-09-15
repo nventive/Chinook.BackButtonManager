@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Windows.UI.Core;
 
-namespace Chinook.BackButtonManager.Uno.WinUI
+namespace Chinook.BackButtonManager
 {
+	/// <summary>
+	/// This is a <see cref="IBackButtonSource"/> implementation wrapping <see cref="SystemNavigationManager.BackRequested"/>.
+	/// </summary>
 	public class SystemNavigationBackButtonSource : IBackButtonSource
 	{
 		/// <summary>
