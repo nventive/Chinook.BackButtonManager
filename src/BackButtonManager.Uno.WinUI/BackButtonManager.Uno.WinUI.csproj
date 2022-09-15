@@ -15,7 +15,7 @@
 	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Uno.WinUI" Version="4.0.7" />
+    <PackageReference Include="Uno.WinUI" Version="4.4.13" />
 	<ProjectReference Include="..\BackButtonManager.Abstractions\BackButtonManager.Abstractions.csproj" />
 
 	<PackageReference Include="Uno.SourceGenerationTasks" Version="4.1.0-dev.9" />
