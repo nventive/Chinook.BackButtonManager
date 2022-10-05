@@ -13,10 +13,11 @@
 		<Description>Chinook.BackButtonManager is a collection of extensible libraries to ease development around back button handling.</Description>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageTags>back;navigation;mvvm;xamarin;ios;android;uwp;chinook</PackageTags>
+		<PackageTags>back;navigation;backbutton;mvvm;xamarin;uwp;ios;android;chinook</PackageTags>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/nventive/Chinook.BackButtonManager</PackageProjectUrl>
 
+		<!-- Needed for Source Link support -->
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
@@ -36,11 +37,15 @@
 
 	<ItemGroup Condition="'$(TargetFramework)'=='xamarinios10' or '$(TargetFramework)'=='monoandroid11.0' or '$(TargetFramework)'=='monoandroid12.0' or '$(TargetFramework)'=='netstandard2.0'">
 		<PackageReference Include="Uno.UI" Version="4.0.7" />
-		<PackageReference Include="Uno.SourceGenerationTasks" Version="4.1.0-dev.9" />
+		<PackageReference Include="Uno.SourceGenerationTasks" Version="4.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\BackButtonManager.Abstractions\BackButtonManager.Abstractions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Needed for Source Link support -->
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
 	</ItemGroup>
 </Project>
