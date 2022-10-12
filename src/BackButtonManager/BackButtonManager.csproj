@@ -10,10 +10,11 @@
 		<Description>Chinook.BackButtonManager is a collection of extensible libraries to ease development around back button handling.</Description>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageTags>back;navigation;mvvm;xamarin;ios;android;uwp;chinook</PackageTags>
+		<PackageTags>back;navigation;backbutton;mvvm;xamarin;ios;android;uwp;chinook</PackageTags>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/nventive/Chinook.BackButtonManager</PackageProjectUrl>
 
+		<!-- Needed for Source Link support -->
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
@@ -30,6 +31,10 @@
 	<ItemGroup>
 		<ProjectReference Include="..\BackButtonManager.Abstractions\BackButtonManager.Abstractions.csproj" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Needed for Source Link support -->
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
 	</ItemGroup>
 </Project>
