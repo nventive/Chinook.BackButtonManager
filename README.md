@@ -1,4 +1,7 @@
 ﻿# Chinook.BackButtonManager 
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square)](LICENSE) ![Version](https://img.shields.io/nuget/v/Chinook.BackButtonManager.Abstractions?style=flat-square) ![Downloads](https://img.shields.io/nuget/dt/Chinook.BackButtonManager.Abstractions?style=flat-square)
+
 The `Chinook.BackButtonManager` packages provide recipes to ease the handling of back buttons in .Net applications. It was designed for MVVM applications, but should work with other patterns too.
 
 ## Cornerstones
@@ -8,6 +11,12 @@ The `Chinook.BackButtonManager` packages provide recipes to ease the handling of
   - A single framework can't cover everything. Our architecture is designed in a way that allows you to extend this foundation to support more use-cases.
 - **Simple**
   - The recipes from these packages are ultra-simple but are still complete enough to support edge cases.
+
+### More like this
+The Chinook namespace has other recipes for .Net MVVM applications.
+- [Chinook.DynamicMvvm](https://github.com/nventive/Chinook.DynamicMvvm): MVVM libraries for extensible and declarative ViewModels.
+- [Chinook.Navigation](https://github.com/nventive/Chinook.Navigation): Navigators for ViewModel-first navigation.
+- [Chinook.DataLoader](https://github.com/nventive/Chinook.DataLoader): Customizable async data loading recipes.
 
 ## Getting Started
 
@@ -139,6 +148,15 @@ public bool IsSidePanelOpen
 
 #### Specify an handler's priority
 It is possible to specify a priority when calling `IBackButtonManager.AddHandler`. The highest priority handlers will be evaluated first.
+
+## Breaking Changes
+
+Please consult [BREAKING_CHANGES.md](BREAKING_CHANGES.md) for more information about migration.
+
+## License
+
+This project is licensed under the Apache 2.0 license - see the
+[LICENSE](LICENSE) file for details.
 
 ## Contributing
 
