@@ -24,7 +24,7 @@ The Chinook namespace has other recipes for .Net MVVM applications.
 
 BackButtonManager is especially well-integrated with [Uno](https://platform.uno/). Here is how to use it in a project which includes the Uno platform:
 
-1. Add a package reference to `Chinook.BackButtonManager.Uno`.
+1. Add a package reference to `Chinook.BackButtonManager.Uno` (for UWP or Xamarin apps) or `Chinook.BackButtonManager.Uno.WinUI` (for WinUI or MAUI apps).
 1. Create a single instance of a `BackButtonManager` which you will use throughout your project.
    ```csharp
    var manager = new BackButtonManager();
@@ -36,6 +36,8 @@ BackButtonManager is especially well-integrated with [Uno](https://platform.uno/
    var source = new SystemNavigationBackButtonSource();
    manager.AddSource(source);
    ```
+
+   > ❗ Note that `SystemNavigationManager` no longer works on Windows applications that are not UWP. On WinUI, you can no longer have a global back button in the title bar of the application.
 
 1. Add handlers for each action you want to take when the back button is pressed:
    ```csharp
