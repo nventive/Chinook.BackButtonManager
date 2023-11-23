@@ -24,7 +24,7 @@ The Chinook namespace has other recipes for .Net MVVM applications.
 
 BackButtonManager is especially well-integrated with [Uno](https://platform.uno/). Here is how to use it in a project which includes the Uno platform:
 
-1. Add a package reference to `Chinook.BackButtonManager.Uno` (for UWP or Xamarin apps) or `Chinook.BackButtonManager.Uno.WinUI` (for WinUI or MAUI apps).
+1. Add a package reference to `Chinook.BackButtonManager.Uno.WinUI` (for WinUI or MAUI apps).
 1. Create a single instance of a `BackButtonManager` which you will use throughout your project.
    ```csharp
    var manager = new BackButtonManager();
@@ -84,13 +84,6 @@ Using `IBackButtonSource`, you can implement a back button source. You can see t
 - The back button from your mouse.
 
 Once you have a back button source, simply add it to a `IBackButtonManager` using `AddSource`.
-
-#### Create a source from `SystemNavigationManager`
-This can be useful for UWP or Uno.UI applications. The source is based on the `SystemNavigationManager.BackRequested` event.
-```csharp
-// This must be executed on the dispatcher
-var source = new SystemNavigationBackButtonSource();
-```
 
 #### Create a custom back button source
 The interface `IBackButtonSource` is very simple. You can implement your own sources easily.
@@ -166,3 +159,12 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on the process for
 contributing to this project.
 
 Be mindful of our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Legacy
+
+#### Create a source from `SystemNavigationManager`
+This can be useful for UWP or Uno.UI applications. The source is based on the `SystemNavigationManager.BackRequested` event.
+```csharp
+// This must be executed on the dispatcher
+var source = new SystemNavigationBackButtonSource();
+```
