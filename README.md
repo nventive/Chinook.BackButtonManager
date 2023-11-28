@@ -144,6 +144,15 @@ public bool IsSidePanelOpen
 #### Specify an handler's priority
 It is possible to specify a priority when calling `IBackButtonManager.AddHandler`. The highest priority handlers will be evaluated first.
 
+## Legacy
+
+#### Create a source from `SystemNavigationManager`
+This can be useful for UWP or Uno.UI applications. The source is based on the `SystemNavigationManager.BackRequested` event.
+```csharp
+// This must be executed on the dispatcher
+var source = new SystemNavigationBackButtonSource();
+```
+
 ## Breaking Changes
 
 Please consult [BREAKING_CHANGES.md](BREAKING_CHANGES.md) for more information about migration.
@@ -159,12 +168,3 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on the process for
 contributing to this project.
 
 Be mindful of our [Code of Conduct](CODE_OF_CONDUCT.md).
-
-## Legacy
-
-#### Create a source from `SystemNavigationManager`
-This can be useful for UWP or Uno.UI applications. The source is based on the `SystemNavigationManager.BackRequested` event.
-```csharp
-// This must be executed on the dispatcher
-var source = new SystemNavigationBackButtonSource();
-```
