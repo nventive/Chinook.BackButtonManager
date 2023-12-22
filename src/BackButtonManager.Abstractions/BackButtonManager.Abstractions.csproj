@@ -9,7 +9,7 @@
 		<Description>Chinook.BackButtonManager is a collection of extensible libraries to ease development around back button handling.</Description>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageTags>back;navigation;backbutton;mvvm;xamarin;ios;android;uwp;chinook</PackageTags>
+		<PackageTags>back;navigation;backbutton;mvvm;ios;android;chinook</PackageTags>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/nventive/Chinook.BackButtonManager</PackageProjectUrl>
 
