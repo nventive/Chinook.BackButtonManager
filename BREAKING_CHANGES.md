@@ -1,5 +1,8 @@
 # Breaking Changes
 
+## 2.1.0
+* Add Support for .NET 8
+
 ## 2.0.0
 * Added Support for .NET 7
 * Updated Uno.WinUI to 5.0.19.
