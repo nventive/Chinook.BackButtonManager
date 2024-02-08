@@ -85,6 +85,15 @@ Using `IBackButtonSource`, you can implement a back button source. You can see t
 
 Once you have a back button source, simply add it to a `IBackButtonManager` using `AddSource`.
 
+#### Create a back button source for XButton1
+This is a source for the XButton1, which is the back button on a mouse. This is useful for desktop applications.
+
+```csharp
+Microsoft.UI.Xaml.Window window;
+// (Make sure you initialize the window and its content.)
+var source = new XButton1BackButtonSource(window.Content);
+```
+
 #### Create a custom back button source
 The interface `IBackButtonSource` is very simple. You can implement your own sources easily.
 
